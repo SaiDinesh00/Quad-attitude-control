@@ -17,9 +17,10 @@ function X_dot = quad_dynamics(t, X, U, params)
     %% Calculate thrust coefficients
     l = params('length');
     k_t = params('k_t');
+    k_d = params('k_d');
     tau_l = k_t * l * (U(1)*abs(U(1)) - U(2)*abs(U(2)) - U(3)*abs(U(3)) + U(4)*abs(U(4)));
     tau_m = k_t * l * (U(1)*abs(U(1)) + U(2)*abs(U(2)) - U(3)*abs(U(3)) - U(4)*abs(U(4)));
-    tau_n = k_t * l * (U(1)*abs(U(1)) - U(2)*abs(U(2)) + U(3)*abs(U(3)) - U(4)*abs(U(4)));
+    tau_n = k_d * l * (U(1)*abs(U(1)) - U(2)*abs(U(2)) + U(3)*abs(U(3)) - U(4)*abs(U(4)));
     %% calculate X_dot
     p_dot = ((I_yy - I_zz)*q*r / I_xx) + tau_l/I_xx;
     q_dot = ((I_zz - I_xx)*p*r / I_yy) + tau_m/I_yy;
