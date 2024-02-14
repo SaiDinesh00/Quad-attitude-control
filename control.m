@@ -4,7 +4,7 @@ function u = control(t,X, X_des)
     %% Simple PID Controller
     %PD controller
     kp_rpy = [500; 500; 3000];
-    kd_rpy = [300; 300; 2000];
+    kd_rpy = [300; 300; 3000];
     %current errors
     ang_error = X_des(1:3) - X(1:3);
     ang_rate_error = X_des(4:6) - X(4:6);    
