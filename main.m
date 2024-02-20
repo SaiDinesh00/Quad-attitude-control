@@ -22,7 +22,7 @@ X_des = [0; 0; 0; 0; 0; 0]*d2r;
 U = zeros(4,Ns);
 
 %% Define Initial State
-X0 = [10; 20; 0; 0; 0; 0]*d2r; % [phi, theta, psi, p, q, r]
+X0 = [10; 20; 10; 0; 0; 0]*d2r; % [phi, theta, psi, p, q, r]
 X(:,1) = X0;
 
 for i = 1:Ns-1
